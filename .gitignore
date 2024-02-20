@@ -1,0 +1,36 @@
+etc/odoo-server.log
+postgresql/
+etc/addons/
+etc/sessions/
+etc/filestore/
+
+angular_app
+angular_app_bak
+
+
+# sphinx build directories
+_build/
+
+# dotfiles
+.*
+!.gitignore
+!.github
+!.mailmap
+# compiled python files
+*.py[co]
+__pycache__/
+# setup.py egg_info
+*.egg-info
+# emacs backup files
+*~
+# hg stuff
+*.orig
+status
+# pycharm
+.idea
+
+# odoo filestore
+odoo/filestore
+source
+odoo-ubo
+deployments

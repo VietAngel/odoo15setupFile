@@ -1,0 +1,20 @@
+[Unit]
+Description=ODOO ERP Server
+# Requires=opt.mount reload-service.service
+# After=network.target opt.mount reload-service.service
+Requires=postgresql.service
+After=network.target postgresql.service
+StartLimitIntervalSec=90
+StartLimitBurst=10
+
+[Service]
+Environment=PATH=:/usr/local/bin:/usr/bin:/bin:/sbin
+Restart=on-failure
+RestartSec=5
+User=odoo
+Group=odoo
+Type=simple
+ExecStart=/usr/bin/python3 /opt/odoo/core/odoo/odoo-bin --xmlrpc-port=8069 --longpolling-port=8072
+
+[Install]
+WantedBy=multi-user.target
